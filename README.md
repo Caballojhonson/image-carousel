@@ -1,0 +1,1 @@
+Simple carousel created as a part of The Odin Project curriculum.

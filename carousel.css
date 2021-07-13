@@ -1,0 +1,51 @@
+html, body {
+    margin: 0px;
+    
+}
+#testContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-container {
+    background-color: rgb(201, 201, 201);
+    max-width:64rem;
+    max-height: 36rem;
+}
+.carousel {
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    grid-template-rows: auto 20%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+/* .UI-wrapper{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+} */
+.UI-icons {
+    width: 20%;
+}
+.arrow-left {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+}
+.arrow-right {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: center;
+}
+.img-container {
+    grid-column: 2;
+}
+.dot-container {
+
+}
+.image {
+    width: 64rem;
+}
