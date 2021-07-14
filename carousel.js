@@ -21,41 +21,50 @@ for (let i = 0; i < imageFrames.length; i++) {
 		dot.addEventListener('click', (e) => dotNavigation(e.target.dataset.index));
 	}
 
-    const dots = dotContainer.children;
+	let autoSlide = setInterval(() => {
+		next();
+	}, 5000);
+
+	const clearAutoSlide = () => {
+		clearInterval(autoSlide);
+		autoSlide = setInterval(() => {
+			next();
+		}, 5000);
+	};
+
+	const dots = dotContainer.children;
 	let count = 0;
 
 	const next = () => {
 		count++;
 		if (count >= images.length) count = 0;
 		imageFrame.style.transform = `translateX(-${count}00%)`;
-        dotNavigation(count);
+		dotNavigation(count);
 	};
 
 	const prev = () => {
 		count--;
 		if (count < 0) count = images.length - 1;
 		imageFrame.style.transform = `translateX(-${count}00%)`;
-        dotNavigation(count);
+		dotNavigation(count);
 	};
 
 	const dotNavigation = (index) => {
 		imageFrame.style.transform = `translateX(-${index}00%)`;
 		count = index;
+
 		for (let y = 0; y < dots.length; y++) {
 			const dot = dots[y];
 			dot.classList.remove('dot-selected');
 			dots[index].classList.add('dot-selected');
 		}
+		clearAutoSlide();
 	};
 
-	const autoSlide = () => {
-		setInterval(() => {
-			next();
-		}, 5000);
-	};
-
-	arrowRight.addEventListener('click', () => next());
-	arrowLeft.addEventListener('click', () => prev());
-
-	autoSlide();
+	arrowRight.addEventListener('click', () => {
+		next();
+	});
+	arrowLeft.addEventListener('click', () => {
+		prev();
+	});
 }
