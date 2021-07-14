@@ -9,10 +9,10 @@ body {
 	align-items: center;
 }
 .carousel-container {
-width: 80%;
+	height: 80%;
 }
 .carousel {
-    aspect-ratio: 16 / 9;
+	aspect-ratio: 16 / 9;
 	display: grid;
 	grid-template-columns: 5% auto 5%;
 	grid-template-rows: auto 10%;
@@ -23,13 +23,12 @@ width: 80%;
 }
 .UI-icons {
 	width: 25%;
-    cursor: pointer;
+	cursor: pointer;
 }
 .UI-icons:hover {
-    transform: scale(1.2, 1.2);
-    transition: transform 0.2s;
+	transform: scale(1.2, 1.2);
+	transition: transform 0.15s;
 }
-
 .arrow-left {
 	grid-column: 1;
 	grid-row: 1;
@@ -48,32 +47,32 @@ width: 80%;
 .slide-container {
 	display: flex;
 	height: 80%;
-    transition: transform ease-in-out 1s;
+	transition: transform cubic-bezier(.13,.41,.26,.98) 1s;
 }
 .dot-container {
-    grid-column: 1 / span 3;
+	grid-column: 1 / span 3;
 	grid-row: 2;
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 }
 .dot {
 	width: 1vh;
 	height: 1vh;
 	border-radius: 50%;
-    background-color: grey;
-    margin: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.4s;
+	background-color: grey;
+	margin: 0.5rem;
+	cursor: pointer;
+	transition: transform 0.4s;
 }
 .dot:hover {
-    background-color: rgb(38, 39, 43);
-    transform: scale(2, 2);
-    transition: transform ease-in-out 0.4s;
+	background-color: rgb(38, 39, 43);
+	transform: scale(2, 2);
+	transition: transform ease-in-out 0.2s;
 }
 .dot-selected {
-    background-color: rgb(38, 39, 43);
-    transform: scale(2, 2);
-    transition: transform ease-in-out 0.4s;
+	background-color: rgb(38, 39, 43);
+	transform: scale(2, 2);
+	transition: transform ease-in-out 0.4s;
 }
 .image {
 	max-width: 100%;

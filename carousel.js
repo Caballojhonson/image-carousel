@@ -21,6 +21,9 @@ for (let i = 0; i < imageFrames.length; i++) {
 		dot.addEventListener('click', (e) => dotNavigation(e.target.dataset.index));
 	}
 
+	const dots = dotContainer.children;
+	let count = 0;
+
 	let autoSlide = setInterval(() => {
 		next();
 	}, 5000);
@@ -32,20 +35,15 @@ for (let i = 0; i < imageFrames.length; i++) {
 		}, 5000);
 	};
 
-	const dots = dotContainer.children;
-	let count = 0;
-
 	const next = () => {
 		count++;
 		if (count >= images.length) count = 0;
-		imageFrame.style.transform = `translateX(-${count}00%)`;
 		dotNavigation(count);
 	};
 
 	const prev = () => {
 		count--;
 		if (count < 0) count = images.length - 1;
-		imageFrame.style.transform = `translateX(-${count}00%)`;
 		dotNavigation(count);
 	};
 
@@ -67,4 +65,5 @@ for (let i = 0; i < imageFrames.length; i++) {
 	arrowLeft.addEventListener('click', () => {
 		prev();
 	});
+	window.document.onload = dotNavigation(0);
 }
